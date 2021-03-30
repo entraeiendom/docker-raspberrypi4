@@ -1,0 +1,2 @@
+* * * * * ./scripts/download_and_restart_if_new.sh
+* * * * * ./scripts/pushHealthToVisuale.sh
