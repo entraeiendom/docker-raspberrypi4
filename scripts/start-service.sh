@@ -1,3 +1,3 @@
 #!/bin/sh
 
-nohup java -jar tfm2rec.jar &
+nohup java -jar bacnet-commands-cli.jar listen &

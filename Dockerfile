@@ -15,12 +15,20 @@ MAINTAINER Bard Lind <bard.lind@gmail.com>
 RUN apt -y update
 RUN apt -y upgrade
 RUN apt install -y cron
+RUN apt install -y vim
+RUN apt install -y procps
 RUN adduser --force-badname bacnetagent
 # Upgrades
 # apt update
 # apt upgrade bl. 11.0.6.10
 # apt install cron
-ADD scripts/* /home/bacnetagent/scripts
+RUN mkdir /home/bacnetagent/scripts
+ADD scripts/* /home/bacnetagent/scripts/
 RUN chmod 755 /home/bacnetagent/scripts/*
+RUN chown -R bacnetagent:bacnetagent /home/bacnetagent
 
+USER bacnetagent
 WORKDIR "/home/bacnetagent"
+RUN crontab scripts/CRON
+#CMD ["scripts/download_and_restart_if_new.sh"]
+ENTRYPOINT ["./entrypoint.sh"]

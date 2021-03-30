@@ -31,12 +31,12 @@ set -eo pipefail
 VERSION_PATTERN=SNAPSHOT
 RELEASE_REPO=https://nexus.entraos.io/content/repositories/entraosreleases
 SNAPSHOT_REPO=https://nexus.entraos.io/content/repositories/entraossnapshots
-GROUP_ID=no/entra/entraos/api
-ARTIFACT_ID=tfm2rec-api
+GROUP_ID=no/entra/bacnet
+ARTIFACT_ID=bacnet-commands-cli
 CLASSIFIER=
 DELAY= #hours or minutes support, e.g. '100m' and '24h'. Optional
-USERNAME=<todo>
-PASSWORD=<todo>
+USERNAME=$NEXUS_USER
+PASSWORD=$NEXUS_PW
 CURL_AUTH= #-u$USERNAME:$PASSWORD
 
 function usage() {
