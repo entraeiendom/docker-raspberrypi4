@@ -9,7 +9,8 @@ IMAGE_TITLE="Semantically updatable java service."
 
 echo "Building Docker image $IMAGE_TITLE ($IMAGE_ID) from $BASEDIR."
 
-docker buildx -t "$IMAGE_NAME:$IMAGE_TAG" "$BASEDIR" --no-cache|| exit 1
+docker build -t "$IMAGE_NAME:$IMAGE_TAG" "$BASEDIR" 
+#docker build -t "$IMAGE_NAME:$IMAGE_TAG" "$BASEDIR" --no-cache|| exit 1
 
 # Require push before inspect
 #docker push $IMAGE_NAME:$IMAGE_TAG

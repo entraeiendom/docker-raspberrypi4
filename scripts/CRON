@@ -1,6 +1,4 @@
-#* * * * * ./scripts/download_and_restart_if_new.sh
-#* * * * * ./scripts/pushHealthToVisuale.sh
 * * * * * /home/bacnetagent/scripts/download_and_restart_if_new.sh >> /var/log/cron.log
 # * * * * * /home/bacnetagent/scripts/pushHealthToVisuale.sh
 * * * * *   echo "Hello $(date)" >>/var/log/cron.log 2>&1
-* * * * * TRACE=1 /home/bacnetagent/scripts/semantic_update_service.sh >> /var/log/cron.log
+#* * * * * TRACE=1 /home/bacnetagent/scripts/semantic_update_service.sh >> /var/log/cron.log

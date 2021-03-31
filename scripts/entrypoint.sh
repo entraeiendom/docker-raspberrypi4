@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 echo starting first time >> /var/log/cron.log
 /bin/su -p -c "crontab scripts/CRON" - bacnetagent &
 /bin/su -p -c "./scripts/semantic_update_service.sh >> /var/log/cron.log 2>&1 " - bacnetagent &

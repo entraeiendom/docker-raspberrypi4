@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo blibli
 # Script to download deployment unit from a Maven artifact repository.
 # Version matching in this script assumes that the Maven artifact repository follows https://docs.oracle.com/middleware/1212/core/MAVEN/maven_version.htm#MAVEN402
 # as Nexus' sorting of artifacts is used as the source for finding latest versions.

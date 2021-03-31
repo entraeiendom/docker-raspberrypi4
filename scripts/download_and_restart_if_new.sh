@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ./scripts/semantic_update_service.sh
 if [ $? -eq 0 ]
 then
