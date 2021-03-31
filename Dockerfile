@@ -18,10 +18,13 @@ RUN apt install -y cron
 RUN apt install -y vim
 RUN apt install -y procps
 RUN adduser --force-badname bacnetagent
-# Upgrades
-# apt update
-# apt upgrade bl. 11.0.6.10
-# apt install cron
+
+## TEST
+#ADD envecho.sh /home/bacnetagent/envecho.sh
+#RUN chmod +x  /home/bacnetagent/envecho.sh
+#ADD java-semantic-pi4.env /home/bacnetagent/java-semantic-pi4.env
+## end test
+# Scripts
 RUN mkdir /home/bacnetagent/scripts
 ADD scripts/* /home/bacnetagent/scripts/
 RUN chmod 755 /home/bacnetagent/scripts/*
@@ -30,6 +33,8 @@ ADD cron.log /var/log/cron.log
 RUN chown bacnetagent:bacnetagent /var/log/cron.log
 #USER bacnetagent
 WORKDIR "/home/bacnetagent"
+
+
 #RUN crontab scripts/CRON
 #CMD ["scripts/download_and_restart_if_new.sh"]
 ENTRYPOINT ["./scripts/entrypoint.sh"]

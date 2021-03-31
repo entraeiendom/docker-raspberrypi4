@@ -1,5 +1,7 @@
 #!/bin/bash
-echo POM_GROUP_ID=$POM_GROUP_ID, POM_ARTIFACT_ID=$POM_ARTIFACT_ID
+. /home/bacnetagent/java-semantic-pi4.env
+echo $(date) - Runing as user $(whoami)
+echo Check to update $POM_GROUP_ID/$POM_ARTIFACT_ID
 ./scripts/semantic_update_service.sh
 if [ $? -eq 0 ]
 then
@@ -15,3 +17,4 @@ else
     ./scripts/start-service.sh
   fi
 fi
+echo "Done $(date)"

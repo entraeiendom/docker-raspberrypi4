@@ -1,6 +1,7 @@
 #!/bin/bash
 JAR_NAME=$POM_ARTIFACT_ID.jar
 echo starting first time >> /var/log/cron.log
+./scripts/copy-env.sh /home/bacnetagent/java-semantic-pi4.env
 /bin/su -p -c "crontab scripts/CRON" - bacnetagent &
 /bin/su -p -c "./scripts/semantic_update_service.sh >> /var/log/cron.log 2>&1 " - bacnetagent
 

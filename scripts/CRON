@@ -1,6 +1,4 @@
-POM_GROUP_ID=$POM_GROUP_ID
-POM_ARTIFACT_ID=$POM_ARTIFACT_ID
 * * * * * /home/bacnetagent/scripts/download_and_restart_if_new.sh >> /var/log/cron.log
 # * * * * * /home/bacnetagent/scripts/pushHealthToVisuale.sh
-* * * * *   echo "Hello $(date)" >>/var/log/cron.log 2>&1
+#* * * * *   /home/bacnetagent/envecho.sh >>/var/log/cron.log 2>&1
 #* * * * * TRACE=1 /home/bacnetagent/scripts/semantic_update_service.sh >> /var/log/cron.log
