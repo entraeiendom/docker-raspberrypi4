@@ -25,7 +25,6 @@ RUN adduser --force-badname bacnetagent
 RUN mkdir /home/bacnetagent/scripts
 ADD scripts/* /home/bacnetagent/scripts/
 RUN chmod 755 /home/bacnetagent/scripts/*
-RUN chmod 755 /home/bacnetagent/entrypoint.sh
 RUN chown -R bacnetagent:bacnetagent /home/bacnetagent
 ADD cron.log /var/log/cron.log
 RUN chown bacnetagent:bacnetagent /var/log/cron.log
@@ -33,6 +32,6 @@ RUN chown bacnetagent:bacnetagent /var/log/cron.log
 WORKDIR "/home/bacnetagent"
 #RUN crontab scripts/CRON
 #CMD ["scripts/download_and_restart_if_new.sh"]
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["./scripts/entrypoint.sh"]
 #CMD ["cron", "-f"]
 #expose 18183

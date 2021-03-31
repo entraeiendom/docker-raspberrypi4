@@ -54,3 +54,15 @@ Check cron log
 docker exec -ti java-semantic-pi4 tail -f /var/log/cron.log
 ```
 
+## Development
+
+1. Add your ssh public key to RPI4
+```
+ssh-copy-id username@remote_host
+```
+2. Push changes to RPI4
+run ./pushToRaspberry.sh
+
+
+
+
