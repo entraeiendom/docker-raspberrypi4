@@ -1,3 +1,3 @@
 #!/bin/sh
-
-nohup java -jar bacnet-commands-cli.jar listen &
+JAR_NAME=$POM_ARTIFACT_ID.jar
+nohup java -jar $JAR_NAME &

@@ -7,7 +7,7 @@ then
   echo "Successfully updated service"
 else
   echo "No updates found"
-  if ps -ef | grep java | grep tfm2rec; then
+  if ps -ef | grep java | grep $POM_ARTIFACT_ID; then
      echo "Process found"
   else
      echo "Process not found - restarting"
