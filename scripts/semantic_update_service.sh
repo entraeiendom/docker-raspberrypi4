@@ -31,8 +31,8 @@ set -eo pipefail
 VERSION_PATTERN=SNAPSHOT
 RELEASE_REPO=https://nexus.entraos.io/content/repositories/entraosreleases
 SNAPSHOT_REPO=https://nexus.entraos.io/content/repositories/entraossnapshots
-GROUP_ID=no/entra/bacnet
-ARTIFACT_ID=bacnet-commands-cli
+GROUP_ID=$POM_GROUP_ID
+ARTIFACT_ID=$POM_ARTIFACT_ID
 CLASSIFIER=
 DELAY= #hours or minutes support, e.g. '100m' and '24h'. Optional
 USERNAME=$NEXUS_USER
