@@ -34,7 +34,9 @@ RUN chown bacnetagent:bacnetagent /var/log/cron.log
 #USER bacnetagent
 WORKDIR "/home/bacnetagent"
 
-
+ENV BACNET_PORT 47808
+EXPOSE ${BACNET_PORT}
+EXPOSE ${BACNET_PORT}/udp
 #RUN crontab scripts/CRON
 #CMD ["scripts/download_and_restart_if_new.sh"]
 ENTRYPOINT ["./scripts/entrypoint.sh"]
